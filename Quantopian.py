@@ -198,8 +198,6 @@ def check_for_signals(proba):
     
     if(proba[0][1] >= classification_threshold):   
         buy = True
-    #elif(proba[0][0] >= classification_threshold):   
-    #    sell = True
     else:
         out = True
     
@@ -220,13 +218,6 @@ def trade(data, context, stock, buy, sell, out):
             order(stock, amount - positions)
         else:
             order(stock, amount)
-    
-    #sell signal
-    #if(sell):
-    #    if(positions >= 0):
-    #           order(stock, -amount - positions)
-    #    else:
-    #        order(stock, -amount)
     
     #out signal
     if(out):
